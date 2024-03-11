@@ -9,7 +9,7 @@ export class FoodService {
     constructor(@InjectRepository(Food) private readonly foodRespository: Repository  <Food> ){}
 
     create(CreateFoodDto: CreateFoodDto): Promise <Food>{
-        const food : new Food();
+        const food = new Food();
         food.name = CreateFoodDto.name;
         food.description = CreateFoodDto.description;
         food.category = CreateFoodDto.category;
