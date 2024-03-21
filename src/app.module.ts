@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FoodModule } from './foods/food.module';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -11,13 +12,13 @@ import { FoodModule } from './foods/food.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'root',
-      database: 'test',
-      entities: [],
+      password: '',
+      database: 'menu',
+     
       synchronize: true,
       autoLoadEntities: true,
     }),
-    FoodModule,
+    FoodModule
   ],
   controllers: [AppController],
   providers: [AppService],
