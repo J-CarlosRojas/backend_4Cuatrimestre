@@ -13,6 +13,11 @@ export class FoodService {
   create(CreateFoodDto: CreateFoodDto): Promise<Food> {
     //Crea un objeto FOOD
     const food = new Food();
+
+    if (CreateFoodDto.id) {
+      food.id = CreateFoodDto.id;
+    }
+
     food.name = CreateFoodDto.name;
     food.description = CreateFoodDto.description;
     food.category = CreateFoodDto.category;
