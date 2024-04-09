@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Delete, HttpCode } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+  Delete,
+  HttpCode,
+} from '@nestjs/common';
 import { FoodService } from './food.service';
 import { CreateFoodDto } from './dto/create-food.dto';
 import { Food } from './food.entity';
@@ -19,7 +28,7 @@ export class FoodController {
     return this.serviceFood.findAll();
   }
 
-  @Get('find/:id') 
+  @Get('find/:id')
   findOne(@Param('id', ParseIntPipe) id: number): Promise<Food> {
     return this.serviceFood.findOne(id);
   }
@@ -28,6 +37,4 @@ export class FoodController {
   delete(@Param(' id ') id: string): Promise<void> {
     return this.serviceFood.delete(id);
   }
-
-
 }
