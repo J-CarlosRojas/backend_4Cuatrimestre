@@ -14,17 +14,17 @@ export class FoodController {
     return this.serviceFood.create(CreateFoodDto);
   }
 
-  @Get()
+  @Get('')
   findAll(): Promise<Food[]> {
     return this.serviceFood.findAll();
   }
 
-  @Get(' id ') 
-  findOne(@Param(' id ', ParseIntPipe) id: number): Promise<Food> {
+  @Get('find/:id') 
+  findOne(@Param('id', ParseIntPipe) id: number): Promise<Food> {
     return this.serviceFood.findOne(id);
   }
 
-  @Delete(' delete/id ')
+  @Delete('delete/:id')
   delete(@Param(' id ') id: string): Promise<void> {
     return this.serviceFood.delete(id);
   }
