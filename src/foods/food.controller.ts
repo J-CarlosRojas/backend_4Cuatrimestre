@@ -34,7 +34,7 @@ export class FoodController {
   }
 
   @Delete('delete/:id')
-  delete(@Param(' id ') id: string): Promise<void> {
+  delete(@Param('id') id: string): Promise<void> {
     return this.serviceFood.delete(id);
   }
 }
