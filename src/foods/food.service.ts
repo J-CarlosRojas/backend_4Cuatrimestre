@@ -26,15 +26,15 @@ export class FoodService {
     //Metodo que crea una tabla TypeORM
     return this.foodRespository.save(food);
   }
-
+  //Versión asincrona de todos
   async findAll(): Promise<Food[]> {
     return this.foodRespository.find();
   }
-
+  //Versión asincorna de obtener una
   findOne(id: number): Promise<Food> {
     return this.foodRespository.findOneBy({ id: id });
   }
-
+  //Version asincorna de delete
   async delete(id: string): Promise<void> {
     await this.foodRespository.delete(id);
   }
